@@ -10,8 +10,8 @@
     <color name="select">#33221a</color>
     <color name="select_dark">#1a120e</color>
 
-    <color name="vote_up">#b3ff0e</color>
-    <color name="vote_down">#ff4e0e</color>
+    <color name="vote_up">#44b3ff0e</color>
+    <color name="vote_down">#44ff4e0e</color>
 
     <color name="colorPrimary">@color/bg</color>
     <color name="colorPrimaryDark">@color/bg_dark</color>

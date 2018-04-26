@@ -3,6 +3,7 @@ package ru.hnau.updownvotes.activity.fragment.view.list
 import android.content.Context
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.DividerItemDecoration
 
 
 class MainList(context: Context) : RecyclerView(context) {
@@ -11,7 +12,12 @@ class MainList(context: Context) : RecyclerView(context) {
 
     init {
         adapter = topicsAdapter
-        layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+
+        val layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        this.layoutManager = layoutManager
+
+        val dividerItemDecoration = DividerItemDecoration(context, layoutManager.orientation)
+        addItemDecoration(dividerItemDecoration)
     }
 
     override fun onAttachedToWindow() {

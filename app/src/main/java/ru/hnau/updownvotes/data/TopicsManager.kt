@@ -22,7 +22,7 @@ object TopicsManager : CallOnAttachProducer<List<Topic>>() {
 
     init {
 
-        addTopic(Topic("Topic1"))
+        addTopic(Topic("Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 Topic1 "))
         addTopic(Topic("Topic2"))
         addTopic(Topic("Topic3"))
 

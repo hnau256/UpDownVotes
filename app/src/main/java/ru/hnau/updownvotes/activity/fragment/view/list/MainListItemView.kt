@@ -2,12 +2,15 @@ package ru.hnau.updownvotes.activity.fragment.view.list
 
 import android.content.Context
 import android.support.v4.content.ContextCompat
+import android.text.TextUtils
 import android.util.TypedValue
+import android.view.Gravity
 import android.widget.LinearLayout
 import android.widget.TextView
 import ru.hnau.updownvotes.R
+import ru.hnau.updownvotes.activity.view.TopicRatingInfoView
+import ru.hnau.updownvotes.activity.view.TopicUpDownButtonsView
 import ru.hnau.updownvotes.data.Topic
-import ru.hnau.updownvotes.data.TopicRatingInfo
 import ru.hnau.updownvotes.producer.detacher.ProducerDetachers
 import ru.hnau.updownvotes.utils.UiUtils
 
@@ -24,36 +27,37 @@ class MainListItemView(context: Context) : LinearLayout(context) {
 
     private val detachers = ProducerDetachers()
 
-    private val upVotesCountView = TextView(context).apply {
-        setTextColor(ContextCompat.getColor(context, R.color.vote_up))
-        setTextSize(TypedValue.COMPLEX_UNIT_DIP, 12f)
+    private val topicRatingInfoView = TopicRatingInfoView(context)
+
+    private val titleView = TextView(context).apply {
+        setTextColor(ContextCompat.getColor(context, R.color.fg))
+        setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14f)
+        maxLines = 4
+        minLines = 1
+        layoutParams = LinearLayout.LayoutParams(0, UiUtils.WRAP_CONTENT, 1f)
+
+        val paddingV = UiUtils.dpToPx(4f, context).toInt()
+        setPadding(0, paddingV, UiUtils.dpToPx(8f, context).toInt(), paddingV)
+        ellipsize = TextUtils.TruncateAt.END
     }
 
-    private val downVotesCountView = TextView(context).apply {
-        setTextColor(ContextCompat.getColor(context, R.color.vote_down))
-        setTextSize(TypedValue.COMPLEX_UNIT_DIP, 12f)
+    private val topicUpDownButtonsView = TopicUpDownButtonsView(context)
+
+    init {
+        orientation = HORIZONTAL
+        gravity = Gravity.CENTER_VERTICAL
+        setBackgroundColor(ContextCompat.getColor(context, R.color.bg))
+
+        addView(topicRatingInfoView)
+        addView(titleView)
+        addView(topicUpDownButtonsView)
     }
 
     private fun onTopicChanged(topic: Topic) {
         detachers.detachAllAndClear()
-        attachToTopic(topic)
-    }
-
-    private fun attachToTopic(topic: Topic? = this.topic) =
-            topic?.attach(detachers, this::onTopicRatingInfoChanged)
-
-    override fun onAttachedToWindow() {
-        super.onAttachedToWindow()
-        attachToTopic()
-    }
-
-    override fun onDetachedFromWindow() {
-        super.onDetachedFromWindow()
-        detachers.detachAllAndClear()
-    }
-
-    private fun onTopicRatingInfoChanged(topicRatingInfo: TopicRatingInfo) {
-
+        titleView.text = topic.text
+        topicRatingInfoView.topic = topic
+        topicUpDownButtonsView.topic = topic
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
