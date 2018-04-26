@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">UpDownVotes</string>
+
+    <string name="topic_check_error_empty">Текст темы не может быть пустым</string>
+    <string name="topic_check_error_too_long">Длина текста темы не может превышать %1$d символов</string>
+
 </resources>
