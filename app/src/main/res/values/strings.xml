@@ -3,5 +3,7 @@
 
     <string name="topic_check_error_empty">Текст темы не может быть пустым</string>
     <string name="topic_check_error_too_long">Длина текста темы не может превышать %1$d символов</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

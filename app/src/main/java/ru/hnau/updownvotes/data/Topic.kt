@@ -12,10 +12,22 @@ import ru.hnau.updownvotes.utils.CheckResult
  */
 
 class Topic(
-        val text: String,
-        upCount: Int = 0,
-        downCount: Int = 0
-) : CachedProducer<Int>(0) {
+        val text: String
+) : CachedProducer<TopicRatingInfo>(
+        TopicRatingInfo()
+) {
+
+    //Сортировка идет по количеству плюсов
+    val sortOrder: Int
+        get() = cachedData.upVotes
+
+    fun onUpVote() {
+        cachedData = cachedData.onUpVote()
+    }
+
+    fun onDownVote() {
+        cachedData = cachedData.onDownVote()
+    }
 
     companion object {
 
@@ -33,37 +45,6 @@ class Topic(
             return CheckResult.correct()
         }
 
-    }
-
-    var upCount = upCount
-        private set(value) {
-            if (field != value) {
-                field = value
-                onRatingChanged()
-            }
-        }
-
-    var downCount = downCount
-        private set(value) {
-            if (field != value) {
-                field = value
-                onRatingChanged()
-            }
-        }
-
-    val rating: Int
-        get() = upCount - downCount
-
-    fun onDownVote() {
-        downCount++
-    }
-
-    fun onUpVote() {
-        upCount++
-    }
-
-    private fun onRatingChanged() {
-        cachedData = rating
     }
 
 }
