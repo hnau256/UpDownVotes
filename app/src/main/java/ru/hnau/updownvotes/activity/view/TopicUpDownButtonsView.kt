@@ -7,6 +7,11 @@ import ru.hnau.updownvotes.R
 import ru.hnau.updownvotes.data.Topic
 import ru.hnau.updownvotes.utils.UiUtils
 
+/**
+ *
+ * Две кнопки + и - для оценки темы
+ *
+ */
 
 class TopicUpDownButtonsView(context: Context) : LinearLayout(context) {
 

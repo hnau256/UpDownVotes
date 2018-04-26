@@ -7,6 +7,11 @@ import ru.hnau.updownvotes.data.Topic
 import ru.hnau.updownvotes.data.TopicsManager
 import ru.hnau.updownvotes.producer.detacher.ProducerDetachers
 
+/**
+ *
+ * Адаплер списка тем
+ *
+ */
 
 class MainListAdapter(
         private val context: Context
@@ -26,11 +31,13 @@ class MainListAdapter(
         holder.setTopic(topic)
     }
 
+    //Список тем изменился
     private fun onTopicsChanged(topics: List<Topic>) {
         this.topics = topics
         notifyDataSetChanged()
     }
 
+    //Подписка на обновление списка тем
     fun onAttachedToWindow() = TopicsManager.attach(detachers, this::onTopicsChanged)
 
     fun onDetachedFromWindow() = detachers.detachAllAndClear()

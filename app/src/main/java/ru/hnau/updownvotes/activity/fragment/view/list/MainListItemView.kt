@@ -14,6 +14,11 @@ import ru.hnau.updownvotes.data.Topic
 import ru.hnau.updownvotes.producer.detacher.ProducerDetachers
 import ru.hnau.updownvotes.utils.UiUtils
 
+/**
+ *
+ * Элемент списка главного экрана
+ *
+ */
 
 class MainListItemView(context: Context) : LinearLayout(context) {
 

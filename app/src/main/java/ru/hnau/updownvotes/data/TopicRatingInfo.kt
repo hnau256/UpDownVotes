@@ -1,5 +1,10 @@
 package ru.hnau.updownvotes.data
 
+/**
+ *
+ * Данные о рейтинге новости
+ *
+ */
 
 data class TopicRatingInfo(
         val upVotes: Int = 0,

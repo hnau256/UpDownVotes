@@ -12,6 +12,11 @@ import ru.hnau.updownvotes.data.TopicRatingInfo
 import ru.hnau.updownvotes.producer.detacher.ProducerDetachers
 import ru.hnau.updownvotes.utils.UiUtils
 
+/**
+ *
+ * View рейтинга темы показывается количество плюсов и минусов и общий ретинг
+ *
+ */
 
 class TopicRatingInfoView(context: Context) : LinearLayout(context) {
 
@@ -55,6 +60,7 @@ class TopicRatingInfoView(context: Context) : LinearLayout(context) {
     private fun onTopicChanged(topic: Topic) = reattachToTopic(topic)
 
 
+    // Подписка на изменение ретинга темы (происходит при изменении ассоциированной темы или при показе на экране)
     private fun reattachToTopic(topic: Topic? = this.topic) {
         detachers.detachAllAndClear()
         topic?.attach(detachers, this::onTopicRatingInfoChanged)
