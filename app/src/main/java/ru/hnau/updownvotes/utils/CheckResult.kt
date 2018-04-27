@@ -6,7 +6,7 @@ package ru.hnau.updownvotes.utils
  */
 
 class CheckResult private constructor(
-        val error: String?
+        private val error: String?
 ) {
 
     companion object {
@@ -15,6 +15,17 @@ class CheckResult private constructor(
 
         fun incorrect(reason: String) = CheckResult(reason)
 
+    }
+
+    fun handle(
+            onCorrect: () -> Unit,
+            onIncorrect: (resson: String) -> Unit
+    ) {
+        if (error == null) {
+            onCorrect.invoke()
+            return
+        }
+        onIncorrect.invoke(error)
     }
 
 }

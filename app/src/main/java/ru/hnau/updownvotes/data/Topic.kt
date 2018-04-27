@@ -32,7 +32,7 @@ class Topic(
 
     companion object {
 
-        private const val TEXT_MAX_LENGTH = 255
+        const val TEXT_MAX_LENGTH = 255
 
         fun checkText(context: Context, text: String): CheckResult {
             if (text.isEmpty()) {

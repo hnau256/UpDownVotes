@@ -1,15 +1,14 @@
 package ru.hnau.updownvotes.activity.fragment.topic_view
 
+import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import ru.hnau.updownvotes.activity.fragment.MainFragment
 import ru.hnau.updownvotes.data.Topic
 import ru.hnau.updownvotes.data.TopicsManager
 
 
-class TopicViewFragment : Fragment() {
+class TopicViewFragment : MainFragment() {
 
     companion object {
 
@@ -24,9 +23,9 @@ class TopicViewFragment : Fragment() {
 
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun createView(context: Context): View? {
         val topic = getTopic() ?: return null
-        return TopicViewFragmentView(inflater.context, topic)
+        return TopicViewFragmentView(context, topic)
     }
 
     private fun getTopic(): Topic? {
