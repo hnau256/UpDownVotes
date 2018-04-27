@@ -14,3 +14,9 @@ UpDownVotes - программа для ОС Android, предназначенн
 - AppTopicFragment - добавление новой темы
 
 Темы хранятся в TopicsManager'е
+
+#### Инициализация AndroidSdk после клонирования репозитория
+Вызовите:
+File -> Sync Project with Gradle Files (Android Studio 3.1.1 или новее)
+или
+Tools -> Android -> Sync Project with Gradle Files  (Android Studio 3.0.1 или старше)
