@@ -22,15 +22,15 @@ class TopicRatingInfoView(context: Context) : LinearLayout(context) {
 
     companion object {
 
-        private const val UP_DOWN_VOTES_TEXT_SIZE_DP = 10f
+        private const val UP_DOWN_VOTES_TEXT_SIZE_SP = 10f
 
     }
 
-    private val upVotesCountView = createRatingInfoView(R.color.vote_up, UP_DOWN_VOTES_TEXT_SIZE_DP)
+    private val upVotesCountView = createRatingInfoView(R.color.vote_up, UP_DOWN_VOTES_TEXT_SIZE_SP)
 
     private val ratingView = createRatingInfoView(R.color.fg, 16f)
 
-    private val downVotesCountView = createRatingInfoView(R.color.vote_down, UP_DOWN_VOTES_TEXT_SIZE_DP)
+    private val downVotesCountView = createRatingInfoView(R.color.vote_down, UP_DOWN_VOTES_TEXT_SIZE_SP)
 
     private val detachers = ProducerDetachers()
 
@@ -72,9 +72,9 @@ class TopicRatingInfoView(context: Context) : LinearLayout(context) {
         ratingView.text = topicRatingInfo.rating.toString()
     }
 
-    private fun createRatingInfoView(colorResId: Int, textSizeDp: Float) = TextView(context).apply {
+    private fun createRatingInfoView(colorResId: Int, textSizeSp: Float) = TextView(context).apply {
         setTextColor(ContextCompat.getColor(context, colorResId))
-        setTextSize(TypedValue.COMPLEX_UNIT_DIP, textSizeDp)
+        setTextSize(TypedValue.COMPLEX_UNIT_SP, textSizeSp)
         maxLines = 1
         minLines = 1
         gravity = Gravity.CENTER

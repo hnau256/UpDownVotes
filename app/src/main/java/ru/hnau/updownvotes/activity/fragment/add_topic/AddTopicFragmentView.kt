@@ -33,7 +33,7 @@ class AddTopicFragmentView(context: Context) : LinearLayout(context) {
 
 
         setTextColor(ContextCompat.getColor(context, R.color.fg))
-        setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16f)
+        setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
 
         filters += InputFilter.LengthFilter(Topic.TEXT_MAX_LENGTH)
         imeOptions = EditorInfo.IME_ACTION_DONE

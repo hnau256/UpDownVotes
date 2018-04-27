@@ -36,7 +36,7 @@ class MainListItemView(context: Context) : LinearLayout(context) {
 
     private val titleView = TextView(context).apply {
         setTextColor(ContextCompat.getColor(context, R.color.fg))
-        setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14f)
+        setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
         maxLines = 4
         minLines = 1
         layoutParams = LinearLayout.LayoutParams(0, UiUtils.WRAP_CONTENT, 1f)

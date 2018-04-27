@@ -39,7 +39,7 @@ class FlatButton(
         val paddingH = UiUtils.dpToPx(32f, context).toInt()
         val paddingV = UiUtils.dpToPx(16f, context).toInt()
         setPadding(paddingH, paddingV, paddingH, paddingV)
-        setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16f)
+        setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
         setAllCaps(true)
         ellipsize = TextUtils.TruncateAt.END
         setOnClickListener { onClick() }

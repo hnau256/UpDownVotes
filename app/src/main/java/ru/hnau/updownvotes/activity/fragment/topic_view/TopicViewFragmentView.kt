@@ -47,7 +47,7 @@ class TopicViewFragmentView(
         layoutParams = ViewGroup.LayoutParams(UiUtils.MATCH_PARENT, UiUtils.WRAP_CONTENT)
         text = topic.text
         setTextColor(ContextCompat.getColor(context, R.color.fg))
-        setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16f)
+        setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
         val paddingV = UiUtils.dpToPx(8f, context).toInt()
         val paddingH = UiUtils.dpToPx(16f, context).toInt()
         setPadding(paddingH, paddingV, paddingH, paddingV)

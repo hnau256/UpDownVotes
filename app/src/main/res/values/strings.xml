@@ -7,5 +7,6 @@
     <string name="action_settings">Settings</string>
     <string name="add_topic_fragment_edit_hint">Введите текст темы</string>
     <string name="add_topic_fragment_add">Добавить тему</string>
+    <string name="main_list_empty_info">Темы отсутствуют, для добавления темы нажмите кнопку в правом нижнем углу</string>
 
 </resources>
