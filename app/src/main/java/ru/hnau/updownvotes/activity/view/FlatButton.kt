@@ -12,6 +12,11 @@ import android.widget.TextView
 import ru.hnau.updownvotes.R
 import ru.hnau.updownvotes.utils.UiUtils
 
+/**
+ *
+ * Простая текстовая кнопка
+ *
+ */
 
 @SuppressLint("ViewConstructor")
 class FlatButton(
@@ -48,6 +53,7 @@ class FlatButton(
         super.draw(canvas)
     }
 
+    // Вызывается когда нажали отпустили и т.п.
     override fun drawableStateChanged() {
         super.drawableStateChanged()
         invalidate()

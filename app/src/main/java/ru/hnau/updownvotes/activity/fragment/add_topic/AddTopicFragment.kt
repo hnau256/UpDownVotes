@@ -4,6 +4,9 @@ import android.content.Context
 import ru.hnau.updownvotes.activity.fragment.MainFragment
 import ru.hnau.updownvotes.producer.detacher.ProducerDetachers
 
+/**
+ * Фрагмент добавления темы
+ */
 
 class AddTopicFragment : MainFragment() {
 

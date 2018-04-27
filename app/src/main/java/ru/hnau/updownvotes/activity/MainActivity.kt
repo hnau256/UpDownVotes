@@ -2,23 +2,18 @@ package ru.hnau.updownvotes.activity
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
-import android.view.View
-import ru.hnau.updownvotes.R
 import ru.hnau.updownvotes.activity.fragment.add_topic.AddTopicFragment
-import ru.hnau.updownvotes.activity.fragment.add_topic.AddTopicFragmentView
 import ru.hnau.updownvotes.activity.fragment.main_list.MainListFragment
 import ru.hnau.updownvotes.activity.fragment.topic_view.TopicViewFragment
 
 class MainActivity : AppCompatActivity() {
 
+    //Идентификатор корневого View
     private val CONTENT_ID = android.R.id.content
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        //findViewById<View>(CONTENT_ID)?.setBackgroundColor(ContextCompat.getColor(this, R.color.bg_dark))
 
         if (savedInstanceState == null) {
             addFragment(MainListFragment())

@@ -32,6 +32,7 @@ class TopicViewFragmentView(
         this.topic = topic
     }
 
+    //Верхняя часть View с рейтингом и кнопками оценки
     private val headerView = LinearLayout(context).apply {
         orientation = HORIZONTAL
         gravity = Gravity.CENTER_VERTICAL

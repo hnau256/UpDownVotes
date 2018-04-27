@@ -14,6 +14,7 @@ object TopicsManager : CallOnAttachProducer<List<Long>>() {
 
     private val topicsList = HashMap<Long, Topic>()
 
+    // Получения списка индексов тем для показа
     override fun getData() =
             topicsList.entries.sortedByDescending { it.value.sortOrder }.take(TOPICS_IN_LIST).map { it.key }
 
@@ -26,6 +27,7 @@ object TopicsManager : CallOnAttachProducer<List<Long>>() {
         call()
     }
 
+    //Создание темы из текста со свобоным иднексом
     private fun createTopic(topicText: String): Topic {
         val id = lastAddedId + 1
         return Topic(id, topicText)
