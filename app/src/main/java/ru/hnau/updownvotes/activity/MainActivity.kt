@@ -1,8 +1,10 @@
 package ru.hnau.updownvotes.activity
 
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import ru.hnau.updownvotes.R
 import ru.hnau.updownvotes.activity.fragment.add_topic.AddTopicFragment
 import ru.hnau.updownvotes.activity.fragment.main_list.MainListFragment
 import ru.hnau.updownvotes.activity.fragment.topic_view.TopicViewFragment
@@ -20,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     fun onAddTopicButtonClicked() = replaceFragment(AddTopicFragment())
 
     fun goBack() = supportFragmentManager.popBackStack()
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun replaceFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
+        transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
         transaction.replace(CONTENT_ID, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
