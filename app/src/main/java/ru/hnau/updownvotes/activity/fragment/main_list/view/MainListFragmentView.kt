@@ -1,11 +1,12 @@
-package ru.hnau.updownvotes.activity.fragment.view
+package ru.hnau.updownvotes.activity.fragment.main_list.view
 
 import android.content.Context
 import android.support.design.widget.FloatingActionButton
 import android.view.Gravity
 import android.widget.FrameLayout
 import ru.hnau.updownvotes.R
-import ru.hnau.updownvotes.activity.fragment.view.list.MainList
+import ru.hnau.updownvotes.activity.fragment.main_list.view.list.MainList
+import ru.hnau.updownvotes.data.Topic
 import ru.hnau.updownvotes.producer.Producer
 import ru.hnau.updownvotes.utils.UiUtils
 
@@ -13,6 +14,9 @@ import ru.hnau.updownvotes.utils.UiUtils
 class MainListFragmentView(context: Context) : FrameLayout(context) {
 
     val onAddTopicButtonClickedProducer = Producer<Unit>()
+
+    val onTopicClickedProducer: Producer<Long>
+        get() = mainList.onTopicClickedProducer
 
     private val mainList = MainList(context).apply {
         layoutParams = FrameLayout.LayoutParams(UiUtils.MATCH_PARENT, UiUtils.MATCH_PARENT)

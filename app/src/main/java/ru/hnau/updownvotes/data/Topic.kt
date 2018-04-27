@@ -12,6 +12,7 @@ import ru.hnau.updownvotes.utils.CheckResult
  */
 
 class Topic(
+        val id: Long,
         val text: String
 ) : CachedProducer<TopicRatingInfo>(
         TopicRatingInfo()

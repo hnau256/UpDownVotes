@@ -6,7 +6,8 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import ru.hnau.updownvotes.R
-import ru.hnau.updownvotes.activity.fragment.MainListFragment
+import ru.hnau.updownvotes.activity.fragment.main_list.MainListFragment
+import ru.hnau.updownvotes.activity.fragment.topic_view.TopicViewFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +29,9 @@ class MainActivity : AppCompatActivity() {
         //TODO
 
     }
+
+
+    fun onTopicClicked(topicId: Long) = replaceFragment(TopicViewFragment.newInstance(topicId))
 
     private fun addFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()

@@ -1,9 +1,11 @@
-package ru.hnau.updownvotes.activity.fragment.view.list
+package ru.hnau.updownvotes.activity.fragment.main_list.view.list
 
 import android.content.Context
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.DividerItemDecoration
+import ru.hnau.updownvotes.data.Topic
+import ru.hnau.updownvotes.producer.Producer
 
 /**
  *
@@ -14,6 +16,9 @@ import android.support.v7.widget.DividerItemDecoration
 class MainList(context: Context) : RecyclerView(context) {
 
     private val topicsAdapter = MainListAdapter(context)
+
+    val onTopicClickedProducer: Producer<Long>
+        get() = topicsAdapter.onTopicClickedProducer
 
     init {
         adapter = topicsAdapter

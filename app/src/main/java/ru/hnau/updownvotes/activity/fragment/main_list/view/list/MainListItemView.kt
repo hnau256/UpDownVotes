@@ -1,4 +1,4 @@
-package ru.hnau.updownvotes.activity.fragment.view.list
+package ru.hnau.updownvotes.activity.fragment.main_list.view.list
 
 import android.content.Context
 import android.support.v4.content.ContextCompat
