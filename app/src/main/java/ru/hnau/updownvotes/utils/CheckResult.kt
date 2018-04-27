@@ -6,7 +6,7 @@ package ru.hnau.updownvotes.utils
  */
 
 class CheckResult private constructor(
-        private val error: String?
+        val error: String?
 ) {
 
     companion object {

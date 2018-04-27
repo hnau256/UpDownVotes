@@ -18,13 +18,15 @@ object TopicsManager : CallOnAttachProducer<List<Long>>() {
     override fun getData() =
             topicsList.entries.sortedByDescending { it.value.sortOrder }.take(TOPICS_IN_LIST).map { it.key }
 
-    fun addTopic(topicText: String) {
-        synchronized(this, {
+    fun addTopic(topicText: String): Long {
+        val topicId = synchronized(this, {
             val topic = createTopic(topicText)
             topicsList[topic.id] = topic
             lastAddedId = topic.id
+            topic.id
         })
         call()
+        return topicId
     }
 
     //Создание темы из текста со свобоным иднексом
@@ -34,6 +36,8 @@ object TopicsManager : CallOnAttachProducer<List<Long>>() {
     }
 
     fun getTopicById(id: Long) = topicsList[id]
+
+    fun clear() = topicsList.clear()
 
 
 }
